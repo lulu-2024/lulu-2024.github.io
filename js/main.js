@@ -170,26 +170,35 @@ function initSmoothScroll() {
   });
 }
 
-/* ----- Tech Stack Carousel ----- */
+/* ----- Tech Stack Carousel (Auto-scroll) ----- */
 function initCarousel() {
-  const track = document.getElementById('skillsTrack');
-  const btnLeft = document.getElementById('carouselLeft');
-  const btnRight = document.getElementById('carouselRight');
+  var track = document.getElementById('skillsTrack');
   if (!track) return;
 
-  var scrollAmount = 300;
+  var speed = 1;       // pixels per frame
+  var paused = false;
+  var animId;
 
-  if (btnLeft) {
-    btnLeft.addEventListener('click', function () {
-      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
+  function scroll() {
+    if (!paused) {
+      track.scrollLeft += speed;
+      // Loop: when reaching the end, jump back to start
+      if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+        track.scrollLeft = 0;
+      }
+    }
+    animId = requestAnimationFrame(scroll);
   }
 
-  if (btnRight) {
-    btnRight.addEventListener('click', function () {
-      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  }
+  // Pause on hover
+  track.addEventListener('mouseenter', function () { paused = true; });
+  track.addEventListener('mouseleave', function () { paused = false; });
+
+  // Also pause on touch
+  track.addEventListener('touchstart', function () { paused = true; });
+  track.addEventListener('touchend', function () { paused = false; });
+
+  animId = requestAnimationFrame(scroll);
 }
 
 /* ----- Project Modal ----- */
