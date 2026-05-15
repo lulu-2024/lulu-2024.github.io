@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTiltCards();
   initSmoothScroll();
   initCarousel();
+  initProjectFilters();
   initProjectModal();
 });
 
@@ -198,6 +199,29 @@ function initCarousel() {
   track.addEventListener('touchend', function () { paused = false; });
 
   animId = requestAnimationFrame(scroll);
+}
+
+/* ----- Project Filters ----- */
+function initProjectFilters() {
+  var btns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.project-card[data-category]');
+  if (!btns.length) return;
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+
+      cards.forEach(function (card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }
 
 /* ----- Project Modal ----- */
