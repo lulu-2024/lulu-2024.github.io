@@ -175,7 +175,7 @@ function initCarousel() {
   var track = document.getElementById('skillsTrack');
   if (!track) return;
 
-  var speed = 1;       // pixels per frame
+  var speed = 2.5;       // pixels per frame
   var paused = false;
   var animId;
 
