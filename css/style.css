@@ -317,9 +317,11 @@ ul { list-style: none; }
 /* ============================================================
    ABOUT
    ============================================================ */
-.about-text {
-  max-width: 680px;
-  margin: 0 auto;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-2xl);
+  align-items: center;
 }
 
 .about-text p {
@@ -327,6 +329,67 @@ ul { list-style: none; }
   line-height: 1.8;
   margin-bottom: var(--space-sm);
   font-size: 1.05rem;
+}
+
+/* Finance + Technology feature */
+.about-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.feature-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xl);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.feature-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.feature-label:first-child {
+  color: var(--accent-warm);
+}
+
+.feature-label:last-child {
+  color: var(--accent);
+}
+
+.feature-connector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: var(--space-xs) 0;
+}
+
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.feature-line {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+}
+
+.feature-caption {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -729,6 +792,8 @@ ul { list-style: none; }
    ============================================================ */
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-feature { flex-direction: row; justify-content: center; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
