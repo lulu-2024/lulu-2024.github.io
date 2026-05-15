@@ -331,65 +331,16 @@ ul { list-style: none; }
   font-size: 1.05rem;
 }
 
-/* Finance + Technology feature */
+/* Venn diagram */
 .about-feature {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-md);
 }
 
-.feature-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xl);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg-card);
-}
-
-.feature-label {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
-}
-
-.feature-label:first-child {
-  color: var(--accent-warm);
-}
-
-.feature-label:last-child {
-  color: var(--accent);
-}
-
-.feature-connector {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding: var(--space-xs) 0;
-}
-
-.feature-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-muted);
-}
-
-.feature-line {
-  width: 40px;
-  height: 1px;
-  background: var(--border);
-}
-
-.feature-caption {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  text-align: center;
-  line-height: 1.5;
+.venn {
+  width: 220px;
+  height: 180px;
 }
 
 /* ============================================================
@@ -793,7 +744,7 @@ ul { list-style: none; }
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
   .about-grid { grid-template-columns: 1fr; }
-  .about-feature { flex-direction: row; justify-content: center; }
+  .about-feature { order: -1; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
