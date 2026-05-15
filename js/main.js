@@ -256,6 +256,9 @@ function initProjectModal() {
       modalTitle.textContent = p.title;
       modalDesc.textContent = p.desc;
       modalTags.innerHTML = p.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('');
+
+      // Set up the GitHub button with direct onclick for reliability
+      modalLink.setAttribute('onclick', 'window.open(\'' + p.link + '\', \'_blank\')');
       modalLink.href = p.link;
 
       modal.classList.add('open');
@@ -269,7 +272,11 @@ function initProjectModal() {
     document.body.style.overflow = '';
   }
 
-  modalClose.addEventListener('click', closeModal);
+  modalClose.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeModal();
+  });
+
   modal.addEventListener('click', function (e) {
     if (e.target === modal) closeModal();
   });
