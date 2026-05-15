@@ -337,8 +337,10 @@ ul { list-style: none; }
    ABOUT
    ============================================================ */
 .about-grid {
-  max-width: 750px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
 .about-text p {
@@ -347,51 +349,159 @@ ul { list-style: none; }
   margin-bottom: var(--space-sm);
 }
 
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
+/* Badge / ID Card */
+.about-badge-wrap {
+  display: flex;
+  justify-content: center;
+  perspective: 800px;
 }
 
-.stat-card {
+.about-badge {
+  position: relative;
+  width: 200px;
+}
+
+.badge-inner {
+  position: relative;
+  width: 200px;
+  height: 280px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-badge.flipped .badge-inner {
+  transform: rotateY(180deg);
+}
+
+.badge-front, .badge-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-lg) var(--space-md);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
+  border: 2px solid var(--border);
   box-shadow: var(--shadow-lg);
 }
 
-.stat-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  margin-bottom: var(--space-xs);
+.badge-back {
+  transform: rotateY(180deg);
 }
 
-.stat-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.badge-front {
+  gap: 8px;
+  padding: var(--space-lg);
+}
+
+.badge-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+}
+
+.badge-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.badge-id {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.badge-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-photo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.badge-clip {
+  width: 30px;
+  height: 14px;
+  background: #94a3b8;
+  border-radius: 4px 4px 0 0;
+  margin: 0 auto 2px;
+}
+
+.badge-lanyard {
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-violet));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Badge drop animation */
+.about-badge-wrap.reveal .about-badge {
+  animation: badgeDrop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+  transform: translateY(-60px) rotateX(-30deg);
+}
+
+.about-badge-wrap.reveal.visible .about-badge {
+  animation: badgeDrop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes badgeDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) rotateX(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
 }
 
 /* ============================================================
-   TECH STACK
+   TECH STACK (Carousel)
    ============================================================ */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+.skills-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.skills-track {
+  display: flex;
   gap: var(--space-md);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: var(--space-xs) 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.skills-track::-webkit-scrollbar {
+  display: none;
 }
 
 .skill-card {
+  flex: 0 0 auto;
+  width: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -400,25 +510,52 @@ ul { list-style: none; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .skill-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
 
 .skill-card img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
 .skill-card span {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-secondary);
   text-align: center;
+  white-space: nowrap;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
 }
 
 /* ============================================================
@@ -431,46 +568,51 @@ ul { list-style: none; }
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--space-xl) var(--space-md);
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent-light);
 }
 
-.project-card-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-sm);
+.project-card-img {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-.project-card h3 {
-  font-size: 1.1rem;
+.project-card-body {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.project-card-body h3 {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 6px;
 }
 
-.project-card p {
-  font-size: 0.88rem;
+.project-card-body p {
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  flex: 1;
-  margin-bottom: var(--space-md);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
 }
 
 .project-card-link {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--accent);
   transition: color 0.2s ease;
@@ -481,13 +623,119 @@ ul { list-style: none; }
 }
 
 .project-card--placeholder {
-  opacity: 0.6;
-  border-style: dashed;
+  opacity: 0.55;
 }
 
 .project-card--placeholder:hover {
   opacity: 1;
-  border-style: solid;
+}
+
+/* ============================================================
+   PROJECT MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  max-width: 560px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.modal-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.modal-body {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: var(--space-lg);
+}
+
+.modal-tags span {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -670,9 +918,10 @@ ul { list-style: none; }
    ============================================================ */
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-badge-wrap { order: -1; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .achievements-split { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
 }
 
 /* ============================================================
@@ -690,11 +939,7 @@ ul { list-style: none; }
   .hero-role { font-size: 1.05rem; }
   .hero-avatar { width: 96px; height: 96px; }
 
-  .skills-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); }
   .projects-grid { grid-template-columns: 1fr; }
-  .skill-card { padding: var(--space-sm) var(--space-xs); }
-  .skill-card img { width: 32px; height: 32px; }
-  .skill-card span { font-size: 0.7rem; }
 
   .beyond-grid { grid-template-columns: 1fr; }
 

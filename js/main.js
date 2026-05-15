@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initTiltCards();
   initSmoothScroll();
+  initCarousel();
+  initProjectModal();
+  initBadgeFlip();
 });
 
 /* ----- Typewriter Effect ----- */
@@ -27,10 +30,10 @@ function initTypewriter() {
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  const speed = 80;      // typing speed (ms)
+  const speed = 80;
   const deleteSpeed = 40;
-  const pauseEnd = 2000;   // pause after word complete
-  const pauseStart = 400;  // pause before typing next
+  const pauseEnd = 2000;
+  const pauseStart = 400;
 
   function tick() {
     const current = roles[roleIndex];
@@ -86,11 +89,9 @@ function initNavScroll() {
   const navItems = document.querySelectorAll('.nav-item');
   if (!navbar) return;
 
-  // Sticky + blur on scroll
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
 
-    // Active section highlighting
     let current = '';
     sections.forEach(section => {
       const top = section.offsetTop - 120;
@@ -100,7 +101,7 @@ function initNavScroll() {
     });
 
     navItems.forEach(item => {
-      item.classList.toggle('active', item.getAttribute('href') === `#${current}`);
+      item.classList.toggle('active', item.getAttribute('href') === '#' + current);
     });
   });
 }
@@ -116,14 +117,12 @@ function initMobileMenu() {
     navLinks.classList.toggle('open');
   });
 
-  // Close menu on link click
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       navLinks.classList.remove('open');
     });
   });
 
-  // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-links') && !e.target.closest('.hamburger')) {
       navLinks.classList.remove('open');
@@ -147,7 +146,7 @@ function initTiltCards() {
       const rotateX = ((y - centerY) / centerY) * -5;
       const rotateY = ((x - centerX) / centerX) * 5;
 
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
     });
 
     card.addEventListener('mouseleave', () => {
@@ -163,10 +162,120 @@ function initSmoothScroll() {
       e.preventDefault();
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
-        const offset = 80; // nav height + breathing room
+        const offset = 80;
         const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
+  });
+}
+
+/* ----- Tech Stack Carousel ----- */
+function initCarousel() {
+  const track = document.getElementById('skillsTrack');
+  const btnLeft = document.getElementById('carouselLeft');
+  const btnRight = document.getElementById('carouselRight');
+  if (!track) return;
+
+  var scrollAmount = 300;
+
+  if (btnLeft) {
+    btnLeft.addEventListener('click', function () {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+  if (btnRight) {
+    btnRight.addEventListener('click', function () {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
+}
+
+/* ----- Project Modal ----- */
+function initProjectModal() {
+  var modal = document.getElementById('projectModal');
+  var modalImg = document.getElementById('modalImg');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalDesc = document.getElementById('modalDesc');
+  var modalTags = document.getElementById('modalTags');
+  var modalLink = document.getElementById('modalLink');
+  var modalClose = document.getElementById('modalClose');
+
+  if (!modal) return;
+
+  // Project data
+  var projects = {
+    cs50: {
+      title: 'CS50 Finance',
+      desc: 'A full-stack stock trading web application built with Python and Flask. Features include user registration and authentication, portfolio management with real-time stock quotes via IEX Cloud API, buy/sell transaction history, and cash balance tracking. Implements password hashing, session management, and SQLite database for persistent storage. Built as the final project for Harvard\'s CS50 — Introduction to Computer Science.',
+      tags: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'Jinja2'],
+      link: 'https://github.com/lulu-2024/CS50-Finance',
+      gradient: 'linear-gradient(135deg, #1e3a5f, #2563eb)'
+    },
+    dsjourney: {
+      title: 'My Data Science Journey',
+      desc: 'A curated collection of Jupyter notebooks documenting my learning path through data science. Covers data wrangling with Pandas, exploratory data analysis, statistical testing, data visualization with Matplotlib and Seaborn, and introductory machine learning with Scikit-learn. Each notebook is self-contained with explanations, code, and visual outputs — serving as both a personal reference and a portfolio of techniques.',
+      tags: ['Python', 'Jupyter', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn'],
+      link: 'https://github.com/lulu-2024/My-Data-Science-Journey',
+      gradient: 'linear-gradient(135deg, #4c1d95, #7c3aed)'
+    },
+    powerbi: {
+      title: 'Power BI Dashboard',
+      desc: 'An interactive Power BI dashboard for real-time data exploration and KPI tracking. Features dynamic filtering, drill-down capabilities, and automated data refresh. Designed to transform raw data into actionable business insights through compelling visualizations. Replace with your own published Power BI embed link to make this dashboard live.',
+      tags: ['Power BI', 'DAX', 'Data Visualization', 'SQL'],
+      link: '#',
+      gradient: 'linear-gradient(135deg, #065f46, #059669)'
+    },
+    coming: {
+      title: 'Coming Soon',
+      desc: 'This space is reserved for your next data science project. Whether it\'s a machine learning model, an interactive dashboard, a deep learning experiment, or a data analysis deep-dive — this card is ready to showcase it. Add your project details and GitHub link here.',
+      tags: ['Coming Soon'],
+      link: '#',
+      gradient: 'linear-gradient(135deg, #64748b, #94a3b8)'
+    }
+  };
+
+  // Open modal on card click
+  document.querySelectorAll('.project-card[data-project]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var key = card.getAttribute('data-project');
+      var p = projects[key];
+      if (!p) return;
+
+      modalImg.style.background = p.gradient;
+      modalImg.innerHTML = '<span style="font-size:1.5rem;font-weight:700">' + p.title + '</span>';
+      modalTitle.textContent = p.title;
+      modalDesc.textContent = p.desc;
+      modalTags.innerHTML = p.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('');
+      modalLink.href = p.link;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
+/* ----- Badge Flip on Click ----- */
+function initBadgeFlip() {
+  var badge = document.getElementById('aboutBadge');
+  if (!badge) return;
+
+  badge.addEventListener('click', function () {
+    badge.classList.toggle('flipped');
   });
 }
