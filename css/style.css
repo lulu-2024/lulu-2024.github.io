@@ -13,7 +13,7 @@
   --text-secondary:#57534e;
   --text-muted:    #a8a29e;
   --accent:        #0ea5a0;
-  --accent-light:  #5eead4;
+  --accent-purple: #7c3aed;
   --accent-warm:   #f97316;
   --border:        #e7e5e4;
   --shadow-sm:     0 1px 3px rgba(0,0,0,0.06);
@@ -228,7 +228,7 @@ ul { list-style: none; }
   padding-top: var(--nav-height);
   background:
     radial-gradient(ellipse 80% 60% at 50% -20%, rgba(14,165,160,0.06), transparent),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(249,115,22,0.04), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.04), transparent),
     var(--bg-primary);
 }
 
@@ -252,16 +252,16 @@ ul { list-style: none; }
 }
 
 .hero-name-accent {
-  color: var(--accent);
+  color: var(--text-primary);
 }
 
 .typewriter {
-  color: var(--accent-warm);
+  color: var(--accent-purple);
   font-weight: 600;
 }
 
 .cursor {
-  color: var(--accent-warm);
+  color: var(--accent-purple);
   animation: cursorBlink 0.7s step-end infinite;
 }
 
@@ -695,7 +695,7 @@ ul { list-style: none; }
 .contact-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  color: var(--accent-warm);
+  color: var(--accent);
 }
 
 .contact-card svg {
