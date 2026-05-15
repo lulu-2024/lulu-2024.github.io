@@ -574,25 +574,12 @@ ul { list-style: none; }
 /* ============================================================
    ACHIEVEMENTS
    ============================================================ */
-.achievements-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2xl);
-}
-
-.achieve-group-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-xs);
-  border-bottom: 2px solid var(--text-primary);
-  display: inline-block;
-}
-
-.achieve-list {
+.achievements-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .achieve-item {
@@ -620,47 +607,6 @@ ul { list-style: none; }
   font-size: 0.82rem;
   color: var(--text-muted);
   margin-top: 2px;
-}
-
-/* ============================================================
-   BEYOND DATA
-   ============================================================ */
-.beyond-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-lg);
-}
-
-.beyond-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-lg);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.beyond-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.beyond-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: var(--space-sm);
-}
-
-.beyond-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-}
-
-.beyond-card p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
 }
 
 /* ============================================================
@@ -752,7 +698,6 @@ ul { list-style: none; }
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .achievements-split { grid-template-columns: 1fr; gap: var(--space-xl); }
 }
 
 /* ============================================================
@@ -769,8 +714,6 @@ ul { list-style: none; }
   .hero-name { font-size: 2.2rem; }
   .hero-role { font-size: 1.05rem; }
   .projects-grid { grid-template-columns: 1fr; }
-
-  .beyond-grid { grid-template-columns: 1fr; }
 
   .contact-links {
     display: grid;
