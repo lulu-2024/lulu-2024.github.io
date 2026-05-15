@@ -401,6 +401,8 @@ ul { list-style: none; }
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -422,6 +424,9 @@ ul { list-style: none; }
 .project-card-body {
   padding: var(--space-md);
   text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card-body h3 {
@@ -436,6 +441,7 @@ ul { list-style: none; }
   color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: var(--space-sm);
+  flex: 1;
 }
 
 .project-card-link {
