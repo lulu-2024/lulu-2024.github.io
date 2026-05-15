@@ -337,10 +337,8 @@ ul { list-style: none; }
    ABOUT
    ============================================================ */
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2xl);
-  align-items: start;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .about-text p {
@@ -427,9 +425,11 @@ ul { list-style: none; }
    PROJECTS
    ============================================================ */
 .projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -715,8 +715,7 @@ ul { list-style: none; }
    ============================================================ */
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid { max-width: 100%; }
   .achievements-split { grid-template-columns: 1fr; gap: var(--space-xl); }
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
 }
@@ -735,8 +734,6 @@ ul { list-style: none; }
   .hero-name { font-size: 2.2rem; }
   .hero-role { font-size: 1.05rem; }
   .hero-avatar { width: 96px; height: 96px; }
-
-  .about-stats { grid-template-columns: 1fr 1fr; }
 
   .skills-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); }
   .skill-card { padding: var(--space-sm) var(--space-xs); }
