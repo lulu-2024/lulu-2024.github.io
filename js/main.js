@@ -279,12 +279,18 @@ function initProjectModal() {
   });
 }
 
-/* ----- Badge Flip on Click ----- */
+/* ----- Badge Idle Swing ----- */
 function initBadgeFlip() {
   var badge = document.getElementById('aboutBadge');
   if (!badge) return;
 
-  badge.addEventListener('click', function () {
-    badge.classList.toggle('flipped');
+  // Subtle idle sway after drop
+  badge.addEventListener('mouseenter', function () {
+    badge.style.transition = 'transform 0.3s ease';
+    badge.style.transform = 'rotate(-3deg)';
+  });
+
+  badge.addEventListener('mouseleave', function () {
+    badge.style.transform = 'rotate(0deg)';
   });
 }
