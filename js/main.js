@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initCarousel();
   initProjectModal();
-  initBadgeFlip();
 });
 
 /* ----- Typewriter Effect ----- */
@@ -279,18 +278,3 @@ function initProjectModal() {
   });
 }
 
-/* ----- Badge Idle Swing ----- */
-function initBadgeFlip() {
-  var badge = document.getElementById('aboutBadge');
-  if (!badge) return;
-
-  // Subtle idle sway after drop
-  badge.addEventListener('mouseenter', function () {
-    badge.style.transition = 'transform 0.3s ease';
-    badge.style.transform = 'rotate(-3deg)';
-  });
-
-  badge.addEventListener('mouseleave', function () {
-    badge.style.transform = 'rotate(0deg)';
-  });
-}
