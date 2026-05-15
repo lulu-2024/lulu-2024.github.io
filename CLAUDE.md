@@ -29,7 +29,7 @@ Deployed on GitHub Pages. Pure HTML/CSS/JS, zero dependencies.
 8. **Ask before Phase 5** — confirm real content with user before replacing placeholders
 
 ## Current Phase
-Phase 1 — Documentation & Project Setup
+Phase 5 — Content Integration & Polish (waiting for user's real content)
 
 ## Reference
 - Friend's portfolio: https://arsalan-ahmed17.github.io/my-portfolio/
