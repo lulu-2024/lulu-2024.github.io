@@ -424,69 +424,70 @@ ul { list-style: none; }
 /* ============================================================
    PROJECTS
    ============================================================ */
-.projects-list {
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.project-card {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  max-width: 800px;
-  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.project-item {
-  padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--border);
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-light);
 }
 
-.project-item:first-child {
-  padding-top: 0;
+.project-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
 }
 
-.project-item-title {
-  font-size: 1.2rem;
+.project-card h3 {
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--space-sm);
 }
 
-.project-item-desc {
-  font-size: 0.95rem;
+.project-card p {
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.6;
+  flex: 1;
   margin-bottom: var(--space-md);
 }
 
-/* Power BI embed inside project item */
-.powerbi-embed-wrap {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  margin-bottom: var(--space-md);
+.project-card-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  transition: color 0.2s ease;
 }
 
-.powerbi-embed {
-  width: 100%;
-  height: 100%;
-  border: none;
+.project-card:hover .project-card-link {
+  color: var(--accent-violet);
 }
 
-.embed-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  pointer-events: none;
+.project-card--placeholder {
+  opacity: 0.6;
+  border-style: dashed;
 }
 
-.embed-placeholder span {
-  font-size: 2rem;
+.project-card--placeholder:hover {
+  opacity: 1;
+  border-style: solid;
 }
 
 /* ============================================================
@@ -669,7 +670,7 @@ ul { list-style: none; }
    ============================================================ */
 @media (max-width: 1023px) {
   .hero-name { font-size: 2.8rem; }
-  .projects-list { max-width: 100%; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .achievements-split { grid-template-columns: 1fr; gap: var(--space-xl); }
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
 }
@@ -690,6 +691,7 @@ ul { list-style: none; }
   .hero-avatar { width: 96px; height: 96px; }
 
   .skills-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-xs); }
+  .projects-grid { grid-template-columns: 1fr; }
   .skill-card { padding: var(--space-sm) var(--space-xs); }
   .skill-card img { width: 32px; height: 32px; }
   .skill-card span { font-size: 0.7rem; }
@@ -703,8 +705,6 @@ ul { list-style: none; }
   }
 
   .contact-card { padding: var(--space-md); }
-
-  .powerbi-embed-wrap { height: 250px; }
 
   /* Mobile nav */
   .hamburger { display: flex; }
