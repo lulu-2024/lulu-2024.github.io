@@ -3,94 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Your Name — Data Science & AI">
   <title>Your Name — Data Science Portfolio</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Devicon CDN (loaded on demand via CSS, no JS needed) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ===== 1. NAVIGATION ===== -->
   <header id="navbar">
-    <div class="nav-container">
+    <div class="nav-inner container">
       <a href="#home" class="nav-logo">YN</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-item active">Home</a></li>
-          <li><a href="#about" class="nav-item">About</a></li>
-          <li><a href="#skills" class="nav-item">Skills</a></li>
-          <li><a href="#projects" class="nav-item">Projects</a></li>
-          <li><a href="#achievements" class="nav-item">Achievements</a></li>
-          <li><a href="#beyond" class="nav-item">Beyond Data</a></li>
-          <li><a href="#contact" class="nav-item">Contact</a></li>
-        </ul>
+      <nav class="nav-links">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#achievements" class="nav-item">Achievements</a>
+        <a href="#beyond" class="nav-item">Beyond Data</a>
+        <a href="#contact" class="nav-item">Contact</a>
       </nav>
-      <button class="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ===== 2. HERO ===== -->
   <section id="home" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-avatar">
-        <img src="images/profile.jpg" alt="Profile" onerror="this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex'">
-        <div class="avatar-fallback" style="display:none">YN</div>
+    <div class="hero-content container">
+      <div class="hero-avatar tilt-card">
+        <img src="images/profile.jpg" alt="Profile photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="avatar-fallback">YN</div>
       </div>
       <h1 class="hero-name">Your Name</h1>
-      <p class="hero-role">I'm a <span class="typewriter" id="typewriter"></span><span class="cursor">|</span></p>
+      <p class="hero-role">
+        I'm a <span class="typewriter" id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+      </p>
       <p class="hero-sub">Turning complex data into clear insights and impactful stories.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
-    <div class="scroll-indicator">
+    <div class="scroll-indicator" aria-hidden="true">
       <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <span class="scroll-line"></span>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ===== 3. ABOUT ===== -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title reveal">About Me</h2>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>
-            I'm a data science professional passionate about uncovering patterns in data and building
-            machine learning models that drive real-world decisions. My journey started with a curiosity
-            about how data shapes the world, and evolved into a career building predictive models,
-            interactive dashboards, and data pipelines.
-          </p>
-          <p>
-            Currently pursuing advanced studies in Data Science, I combine academic rigor with hands-on
-            experience in analytics, visualization, and AI. When I'm not wrangling data, you'll find me
-            exploring new tools, contributing to open-source projects, and sharing knowledge with the
-            data community.
-          </p>
-          <p>
-            I believe the best data work tells a story — one that's clear, honest, and actionable.
-          </p>
+          <p>I'm a data science professional passionate about uncovering patterns in data and building machine learning models that drive real-world decisions. My journey started with a curiosity about how data shapes the world, and evolved into a career building predictive models, interactive dashboards, and data pipelines.</p>
+          <p>Currently pursuing advanced studies in Data Science, I combine academic rigor with hands-on experience in analytics, visualization, and AI. When I'm not wrangling data, you'll find me exploring new tools, contributing to open-source projects, and sharing knowledge with the data community.</p>
+          <p>I believe the best data work tells a story — one that's clear, honest, and actionable.</p>
         </div>
         <div class="about-stats reveal">
-          <div class="stat-item tilt-card">
+          <div class="stat-card tilt-card">
             <span class="stat-number">5+</span>
-            <span class="stat-label">Projects Completed</span>
+            <span class="stat-label">Projects</span>
           </div>
-          <div class="stat-item tilt-card">
+          <div class="stat-card tilt-card">
             <span class="stat-number">3+</span>
             <span class="stat-label">Certifications</span>
           </div>
-          <div class="stat-item tilt-card">
+          <div class="stat-card tilt-card">
             <span class="stat-number">2+</span>
             <span class="stat-label">Years Experience</span>
           </div>
-          <div class="stat-item tilt-card">
-            <span class="stat-number">∞</span>
+          <div class="stat-card tilt-card">
+            <span class="stat-number">&infin;</span>
             <span class="stat-label">Curiosity</span>
           </div>
         </div>
@@ -98,296 +91,300 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- ===== 4. TECH STACK ===== -->
   <section id="skills" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Tech Stack</h2>
+      <h2 class="section-title reveal">Tech Stack</h2>
       <div class="skills-grid reveal">
+        <!-- Row 1: Languages & Databases -->
         <div class="skill-card tilt-card">
-          <img src="images/icons/python.png" alt="Python" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" onerror="this.style.display='none'">
           <span>Python</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/sql.png" alt="SQL" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" onerror="this.style.display='none'">
           <span>SQL</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/r.png" alt="R" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" onerror="this.style.display='none'">
           <span>R</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/tensorflow.png" alt="TensorFlow" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" onerror="this.style.display='none'">
+          <span>C</span>
+        </div>
+        <!-- Row 2: ML & Data -->
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" onerror="this.style.display='none'">
           <span>TensorFlow</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/pytorch.png" alt="PyTorch" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" onerror="this.style.display='none'">
           <span>PyTorch</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/powerbi.png" alt="Power BI" onerror="this.style.display='none'">
-          <span>Power BI</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/tableau.png" alt="Tableau" onerror="this.style.display='none'">
-          <span>Tableau</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/excel.png" alt="Excel" onerror="this.style.display='none'">
-          <span>Excel</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/git.png" alt="Git" onerror="this.style.display='none'">
-          <span>Git</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/aws.png" alt="AWS" onerror="this.style.display='none'">
-          <span>AWS</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/pandas.png" alt="Pandas" onerror="this.style.display='none'">
-          <span>Pandas</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/numpy.png" alt="NumPy" onerror="this.style.display='none'">
-          <span>NumPy</span>
-        </div>
-        <div class="skill-card tilt-card">
-          <img src="images/icons/scikit.png" alt="Scikit-learn" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" onerror="this.style.display='none'">
           <span>Scikit-learn</span>
         </div>
         <div class="skill-card tilt-card">
-          <img src="images/icons/jupyter.png" alt="Jupyter" onerror="this.style.display='none'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" onerror="this.style.display='none'">
+          <span>Pandas</span>
+        </div>
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" onerror="this.style.display='none'">
+          <span>NumPy</span>
+        </div>
+        <!-- Row 3: Tools & Platforms -->
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter" onerror="this.style.display='none'">
           <span>Jupyter</span>
+        </div>
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" onerror="this.style.display='none'">
+          <span>Git</span>
+        </div>
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" onerror="this.style.display='none'">
+          <span>HTML5</span>
+        </div>
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" onerror="this.style.display='none'">
+          <span>CSS3</span>
+        </div>
+        <div class="skill-card tilt-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" onerror="this.style.display='none'">
+          <span>JavaScript</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- ===== 5. PROJECTS ===== -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title reveal">Projects</h2>
+
       <div class="projects-grid reveal">
-        <!-- Project Card 1 -->
-        <div class="project-card tilt-card">
-          <div class="project-img">
-            <img src="images/projects/project1.jpg" alt="Project 1" onerror="this.parentElement.style.background='linear-gradient(135deg, #6366f1, #8b5cf6)'">
+
+        <!-- Project 1: CS50 Finance (real repo) -->
+        <article class="project-card tilt-card">
+          <div class="project-img" style="background: linear-gradient(135deg, #1e3a5f, #2563eb);">
+            <span class="project-img-label">CS50 Finance</span>
           </div>
-          <div class="project-info">
-            <h3>Customer Churn Prediction</h3>
-            <p>Built a machine learning pipeline to predict customer churn with 92% accuracy using XGBoost and feature engineering.</p>
+          <div class="project-body">
+            <h3 class="project-title">CS50 Finance</h3>
+            <p class="project-desc">A full-stack stock trading web application built with Python and Flask. Features include user authentication, portfolio tracking, stock quotes via API, and transaction history.</p>
             <div class="project-tags">
-              <span>Python</span><span>XGBoost</span><span>Scikit-learn</span>
+              <span>Python</span><span>Flask</span><span>HTML/CSS</span><span>SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/lulu-2024/CS50-Finance" target="_blank" class="btn btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Data Science Journey (real repo) -->
+        <article class="project-card tilt-card">
+          <div class="project-img" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">
+            <span class="project-img-label">Data Science Journey</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">My Data Science Journey</h3>
+            <p class="project-desc">A curated collection of Jupyter notebooks documenting my learning path through data science. Covers data wrangling, visualization, statistical analysis, and machine learning techniques.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Jupyter</span><span>Pandas</span><span>Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/lulu-2024/My-Data-Science-Journey" target="_blank" class="btn btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Placeholder -->
+        <article class="project-card tilt-card">
+          <div class="project-img" style="background: linear-gradient(135deg, #065f46, #059669);">
+            <span class="project-img-label">Coming Soon</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Your Next Project</h3>
+            <p class="project-desc">A placeholder for your upcoming project. Replace this card with your next data science project — dashboard, model, or analysis.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Data Viz</span>
             </div>
             <div class="project-links">
               <a href="#" class="btn btn-sm">GitHub</a>
-              <a href="#" class="btn btn-sm btn-outline">Live Demo</a>
             </div>
           </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="project-card tilt-card">
+        </article>
+
+        <!-- Project 4: Power BI Embed Slot -->
+        <article class="project-card project-card--embed tilt-card">
           <div class="project-img">
-            <img src="images/projects/project2.jpg" alt="Project 2" onerror="this.parentElement.style.background='linear-gradient(135deg, #06b6d4, #3b82f6)'">
-          </div>
-          <div class="project-info">
-            <h3>Sales Analytics Dashboard</h3>
-            <p>Interactive Power BI dashboard tracking regional sales KPIs, year-over-year growth, and product performance.</p>
-            <div class="project-tags">
-              <span>Power BI</span><span>SQL</span><span>DAX</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm">GitHub</a>
-              <a href="#" class="btn btn-sm btn-outline">Interactive Dashboard</a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="project-card tilt-card">
-          <div class="project-img">
-            <img src="images/projects/project3.jpg" alt="Project 3" onerror="this.parentElement.style.background='linear-gradient(135deg, #10b981, #14b8a6)'">
-          </div>
-          <div class="project-info">
-            <h3>NLP Sentiment Analyzer</h3>
-            <p>Transformer-based sentiment analysis tool for product reviews, deployed as a Streamlit web application.</p>
-            <div class="project-tags">
-              <span>Python</span><span>Transformers</span><span>Streamlit</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm">GitHub</a>
-              <a href="#" class="btn btn-sm btn-outline">Try it Live</a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 4 -->
-        <div class="project-card tilt-card">
-          <div class="project-img">
-            <img src="images/projects/project4.jpg" alt="Project 4" onerror="this.parentElement.style.background='linear-gradient(135deg, #f59e0b, #ef4444)'">
-          </div>
-          <div class="project-info">
-            <h3>Financial Portfolio Optimizer</h3>
-            <p>Python-based tool using Monte Carlo simulation and Markowitz optimization for portfolio allocation.</p>
-            <div class="project-tags">
-              <span>Python</span><span>NumPy</span><span>Pandas</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm">GitHub</a>
-              <a href="#" class="btn btn-sm btn-outline">View Report</a>
-            </div>
-          </div>
-        </div>
-        <!-- Power BI Embedded Dashboard (placeholder) -->
-        <div class="project-card project-embed tilt-card">
-          <div class="project-img">
-            <!-- Replace the src with your published Power BI embed link -->
             <iframe
               src=""
               title="Power BI Dashboard"
-              frameborder="0"
-              allowfullscreen="true"
+              allowfullscreen
               class="powerbi-embed"
-              onerror="this.style.display='none'">
+              loading="lazy">
             </iframe>
             <div class="embed-placeholder">
+              <span class="embed-placeholder-icon">&#128202;</span>
               <span>Power BI Dashboard</span>
-              <p>Add your Power BI embed link in the iframe src to display your interactive dashboard here.</p>
+              <p>Replace the iframe src with your published Power BI link</p>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Interactive Dashboard</h3>
-            <p>Embedded Power BI dashboard for interactive data exploration.</p>
+          <div class="project-body">
+            <h3 class="project-title">Interactive Dashboard</h3>
+            <p class="project-desc">Embed your interactive Power BI dashboard here for live data exploration.</p>
             <div class="project-tags">
-              <span>Power BI</span><span>Data Viz</span>
+              <span>Power BI</span><span>Data Visualization</span>
             </div>
           </div>
-        </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Achievements Section -->
+  <!-- ===== 6. ACHIEVEMENTS ===== -->
   <section id="achievements" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Research & Achievements</h2>
-      <div class="achievements-grid reveal">
+      <h2 class="section-title reveal">Achievements</h2>
+      <div class="achievements-split reveal">
+
         <!-- Certifications -->
-        <div class="achievement-category">
-          <h3>Certifications</h3>
-          <div class="achieve-list">
-            <div class="achieve-item">
-              <div class="achieve-icon">&#127891;</div>
-              <div class="achieve-info">
-                <h4>Machine Learning Specialization</h4>
+        <div class="achieve-group">
+          <h3 class="achieve-group-title">Certifications</h3>
+          <ul class="achieve-list">
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127891;</span>
+              <div>
+                <strong>CS50: Introduction to Computer Science</strong>
+                <p>Harvard University</p>
+              </div>
+            </li>
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127891;</span>
+              <div>
+                <strong>Data Analyst in Python</strong>
+                <p>DataCamp</p>
+              </div>
+            </li>
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127891;</span>
+              <div>
+                <strong>Data Analyst in Power BI</strong>
+                <p>DataCamp</p>
+              </div>
+            </li>
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127891;</span>
+              <div>
+                <strong>Machine Learning Specialization</strong>
                 <p>Stanford Online / DeepLearning.AI</p>
               </div>
-            </div>
-            <div class="achieve-item">
-              <div class="achieve-icon">&#127891;</div>
-              <div class="achieve-info">
-                <h4>Data Science Professional Certificate</h4>
-                <p>IBM / Coursera</p>
-              </div>
-            </div>
-            <div class="achieve-item">
-              <div class="achieve-icon">&#127891;</div>
-              <div class="achieve-info">
-                <h4>Deep Learning Specialization</h4>
-                <p>DeepLearning.AI</p>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
-        <!-- Honors & Awards -->
-        <div class="achievement-category">
-          <h3>Honors & Awards</h3>
-          <div class="achieve-list">
-            <div class="achieve-item">
-              <div class="achieve-icon">&#127942;</div>
-              <div class="achieve-info">
-                <h4>Hackathon Winner</h4>
-                <p>Data for Good Hackathon 2024 — Best Predictive Model</p>
+
+        <!-- Honors -->
+        <div class="achieve-group">
+          <h3 class="achieve-group-title">Honors &amp; Awards</h3>
+          <ul class="achieve-list">
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127942;</span>
+              <div>
+                <strong>Dean's List</strong>
+                <p>Academic Excellence — 3 consecutive semesters</p>
               </div>
-            </div>
-            <div class="achieve-item">
-              <div class="achieve-icon">&#127942;</div>
-              <div class="achieve-info">
-                <h4>Dean's List</h4>
-                <p>Academic Excellence Award — 3 consecutive semesters</p>
+            </li>
+            <li class="achieve-item">
+              <span class="achieve-marker">&#127942;</span>
+              <div>
+                <strong>Hackathon Finalist</strong>
+                <p>Data for Good Hackathon — Best Predictive Model</p>
               </div>
-            </div>
-            <div class="achieve-item">
-              <div class="achieve-icon">&#128220;</div>
-              <div class="achieve-info">
-                <h4>Research Publication</h4>
-                <p>"Deep Learning Approaches to Time Series Forecasting" — University Journal 2024</p>
+            </li>
+            <li class="achieve-item">
+              <span class="achieve-marker">&#128220;</span>
+              <div>
+                <strong>Research Publication</strong>
+                <p>University Journal 2024 — Time Series Forecasting</p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Beyond Data Section -->
+  <!-- ===== 7. BEYOND DATA ===== -->
   <section id="beyond" class="section">
     <div class="container">
-      <h2 class="section-title">Beyond Data</h2>
+      <h2 class="section-title reveal">Beyond Data</h2>
       <div class="beyond-grid reveal">
+
         <div class="beyond-card tilt-card">
-          <div class="beyond-icon">&#127939;</div>
-          <h3>Fitness & Running</h3>
-          <p>Training for my first marathon. I believe discipline in fitness translates directly to discipline in work — both are about showing up consistently.</p>
+          <span class="beyond-icon">&#127939;</span>
+          <h3>Fitness &amp; Running</h3>
+          <p>Discipline in fitness translates directly to discipline in work — both are about showing up consistently. Training for my next race.</p>
         </div>
+
         <div class="beyond-card tilt-card">
-          <div class="beyond-icon">&#128214;</div>
+          <span class="beyond-icon">&#128214;</span>
           <h3>Reading</h3>
-          <p>Avid reader of science and philosophy. Currently reading "Thinking, Fast and Slow" — because understanding human bias makes me a better data scientist.</p>
+          <p>Avid reader of science, philosophy, and history. Currently reading <em>Sapiens</em> — understanding humanity makes me a better analyst.</p>
         </div>
+
         <div class="beyond-card tilt-card">
-          <div class="beyond-icon">&#127758;</div>
+          <span class="beyond-icon">&#127758;</span>
           <h3>Volunteering</h3>
-          <p>Active member of the local data-for-good community. Using data skills to help non-profits measure and maximize their impact.</p>
+          <p>Active in the data-for-good community. Using data skills to help non-profits measure and maximize their social impact.</p>
         </div>
+
         <div class="beyond-card tilt-card">
-          <div class="beyond-icon">&#127911;</div>
-          <h3>Podcasts & Talks</h3>
-          <p>Regular listener of Data Skeptic and Linear Digressions. Occasionally give talks at local meetups about practical machine learning.</p>
+          <span class="beyond-icon">&#127911;</span>
+          <h3>Podcasts &amp; Talks</h3>
+          <p>Regular listener of data science podcasts. Occasional speaker at local meetups on practical machine learning topics.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ===== 8. CONTACT ===== -->
   <section id="contact" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
+      <h2 class="section-title reveal">Get in Touch</h2>
       <div class="contact-content reveal">
-        <p class="contact-text">
-          I'm always open to discussing data science opportunities, collaboration on interesting projects,
-          or just chatting about the latest in AI.
-        </p>
+        <p>I'm always open to discussing data science opportunities, collaboration on interesting projects, or just chatting about the latest in AI.</p>
         <div class="contact-links">
-          <a href="mailto:your.email@example.com" class="contact-item tilt-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <a href="mailto:your.email@example.com" class="contact-card tilt-card" aria-label="Email">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="M22 4L12 13L2 4"/>
             </svg>
             <span>Email</span>
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-item tilt-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card tilt-card" aria-label="LinkedIn" rel="noopener">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             <span>LinkedIn</span>
           </a>
-          <a href="https://github.com/yourusername" target="_blank" class="contact-item tilt-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+
+          <a href="https://github.com/lulu-2024" target="_blank" class="contact-card tilt-card" aria-label="GitHub" rel="noopener">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
             </svg>
             <span>GitHub</span>
           </a>
-          <a href="assets/resume.pdf" class="contact-item tilt-card" download>
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <a href="assets/resume.pdf" class="contact-card tilt-card" download aria-label="Download resume">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
               <polyline points="14 2 14 8 20 8"/>
               <line x1="16" y1="13" x2="8" y2="13"/>
@@ -395,13 +392,14 @@
             </svg>
             <span>Resume</span>
           </a>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- ===== 9. FOOTER ===== -->
+  <footer class="footer">
     <div class="container">
       <p>&copy; 2026 Your Name. Built with passion and vanilla code.</p>
     </div>
