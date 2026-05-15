@@ -212,10 +212,11 @@ function initProjectModal() {
 
   if (!modal) return;
 
-  // Project data
+  // Project data — add 'img' to replace gradient with an image
   var projects = {
     cs50: {
       title: 'CS50 Finance',
+      img: '',
       desc: 'A full-stack stock trading web application built with Python and Flask. Features include user registration and authentication, portfolio management with real-time stock quotes via IEX Cloud API, buy/sell transaction history, and cash balance tracking. Implements password hashing, session management, and SQLite database for persistent storage. Built as the final project for Harvard\'s CS50 — Introduction to Computer Science.',
       tags: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'Jinja2'],
       link: 'https://github.com/lulu-2024/CS50-Finance',
@@ -223,6 +224,7 @@ function initProjectModal() {
     },
     dsjourney: {
       title: 'My Data Science Journey',
+      img: '',
       desc: 'A curated collection of Jupyter notebooks documenting my learning path through data science. Covers data wrangling with Pandas, exploratory data analysis, statistical testing, data visualization with Matplotlib and Seaborn, and introductory machine learning with Scikit-learn. Each notebook is self-contained with explanations, code, and visual outputs — serving as both a personal reference and a portfolio of techniques.',
       tags: ['Python', 'Jupyter', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn'],
       link: 'https://github.com/lulu-2024/My-Data-Science-Journey',
@@ -230,6 +232,7 @@ function initProjectModal() {
     },
     powerbi: {
       title: 'Power BI Dashboard',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powerbi/powerbi-original.svg',
       desc: 'An interactive Power BI dashboard for real-time data exploration and KPI tracking. Features dynamic filtering, drill-down capabilities, and automated data refresh. Designed to transform raw data into actionable business insights through compelling visualizations. Replace with your own published Power BI embed link to make this dashboard live.',
       tags: ['Power BI', 'DAX', 'Data Visualization', 'SQL'],
       link: '#',
@@ -237,6 +240,7 @@ function initProjectModal() {
     },
     coming: {
       title: 'Coming Soon',
+      img: '',
       desc: 'This space is reserved for your next data science project. Whether it\'s a machine learning model, an interactive dashboard, a deep learning experiment, or a data analysis deep-dive — this card is ready to showcase it. Add your project details and GitHub link here.',
       tags: ['Coming Soon'],
       link: '#',
@@ -251,8 +255,13 @@ function initProjectModal() {
       var p = projects[key];
       if (!p) return;
 
-      modalImg.style.background = p.gradient;
-      modalImg.innerHTML = '<span style="font-size:1.5rem;font-weight:700">' + p.title + '</span>';
+      if (p.img) {
+        modalImg.style.background = '';
+        modalImg.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;padding:20px" onerror="this.style.display=\'none\';this.parentElement.style.background=\'' + p.gradient + '\';this.parentElement.innerHTML+=\'<span style=font-size:1.5rem;font-weight:700;color:#fff>' + p.title + '</span>\';">';
+      } else {
+        modalImg.style.background = p.gradient;
+        modalImg.innerHTML = '<span style="font-size:1.5rem;font-weight:700;color:#fff">' + p.title + '</span>';
+      }
       modalTitle.textContent = p.title;
       modalDesc.textContent = p.desc;
       modalTags.innerHTML = p.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('');
