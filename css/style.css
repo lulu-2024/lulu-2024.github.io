@@ -384,10 +384,15 @@ ul { list-style: none; }
   box-shadow: var(--shadow);
 }
 
-.skill-card img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
+.skill-card svg {
+  width: 28px;
+  height: 28px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.skill-card:hover svg {
+  color: var(--accent);
 }
 
 .skill-card span {
