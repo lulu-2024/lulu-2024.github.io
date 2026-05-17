@@ -331,16 +331,15 @@ ul { list-style: none; }
   font-size: 1.05rem;
 }
 
-/* Venn diagram */
+/* About feature image */
 .about-feature {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.venn {
+.venn-img {
   width: 260px;
-  height: 200px;
 }
 
 /* ============================================================
