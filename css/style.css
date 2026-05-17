@@ -69,7 +69,7 @@ ul { list-style: none; }
 
 /* ----- Section ----- */
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .section-alt {
@@ -776,8 +776,8 @@ ul { list-style: none; }
    ============================================================ */
 @media (max-width: 639px) {
   :root {
-    --space-3xl: 4rem;
-    --space-2xl: 3rem;
+    --space-3xl: 3rem;
+    --space-2xl: 2.5rem;
   }
 
   .section-title { font-size: 1.75rem; }
