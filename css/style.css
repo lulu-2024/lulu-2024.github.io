@@ -643,8 +643,9 @@ ul { list-style: none; }
 }
 
 .achieve-marker {
-  font-size: 1.25rem;
   flex-shrink: 0;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
 
 .achieve-item strong {
