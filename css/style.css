@@ -372,35 +372,34 @@ ul { list-style: none; }
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-md) var(--space-sm);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--text-primary);
+  border: 1px solid var(--text-primary);
   border-radius: var(--radius);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
 
 .skill-card:hover {
+  background: var(--accent);
+  border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
 }
 
 .skill-card svg {
   width: 28px;
   height: 28px;
-  color: var(--text-secondary);
-  transition: color 0.2s ease;
-}
-
-.skill-card:hover svg {
-  color: var(--accent);
+  color: #fff;
+  transition: color 0.25s ease;
 }
 
 .skill-card span {
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #fff;
   text-align: center;
   white-space: nowrap;
+  transition: color 0.25s ease;
 }
 
 
