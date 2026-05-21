@@ -287,6 +287,12 @@ function initProjectModal() {
       var p = projects[key];
       if (!p) return;
 
+      // If project has PDF, open it directly
+      if (p.pdf) {
+        window.open(p.pdf, '_blank');
+        return;
+      }
+
       if (p.img) {
         modalImg.style.background = '';
         modalImg.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:contain;padding:20px" onerror="this.style.display=\'none\';this.parentElement.style.background=\'' + p.gradient + '\';this.parentElement.innerHTML+=\'<span style=font-size:1.5rem;font-weight:700;color:#fff>' + p.title + '</span>\';">';
