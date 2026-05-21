@@ -241,8 +241,8 @@ function initProjectModal() {
     cs50: {
       title: 'CS50 Finance',
       img: '',
-      desc: 'A full-stack stock trading web application built with Python and Flask. Features include user registration and authentication, portfolio management with real-time stock quotes via IEX Cloud API, buy/sell transaction history, and cash balance tracking. Implements password hashing, session management, and SQLite database for persistent storage. Built as the final project for Harvard\'s CS50 — Introduction to Computer Science.',
-      tags: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'Jinja2'],
+      desc: 'As part of CS50\'s web track, I was tasked with building this mock trading platform. The user has to initially create an account, after which their account will be credited with 10,000 (imaginary) dollars. Using this amount, the user can purchase a particular stock listed on the New York Stock Exchange (NYSE), by entering the stock\'s symbol on the \'buy\' page. The trade is executed at real-time prices which are updated by querying IEX\'s API. The user can view their portfolio and even sell a particular stock from their holdings, at the current rate.',
+      tags: ['Python', 'Flask', 'SQLite', 'HTML/CSS'],
       link: 'https://github.com/lulu-2024/CS50-Finance',
       gradient: 'linear-gradient(135deg, #1e3a5f, #2563eb)'
     },
