@@ -262,6 +262,14 @@ function initProjectModal() {
       link: '#',
       gradient: 'linear-gradient(135deg, #065f46, #059669)'
     },
+    covid: {
+      title: 'Global COVID-19 Analytics Dashboard',
+      img: '',
+      desc: 'A comprehensive SQL-based analysis of global COVID-19 data, exploring infection rates, mortality trends, and vaccination progress across countries and continents. The project uses advanced SQL queries including joins, CTEs, window functions, and aggregate operations to extract meaningful insights from large-scale pandemic datasets. Key findings include country-level case fatality rates, vaccination rollout analysis, and time-series trend visualization.',
+      tags: ['SQL', 'Data Analysis', 'Tableau', 'COVID-19'],
+      link: 'https://github.com/lulu-2024/COVID-Project',
+      gradient: 'linear-gradient(135deg, #dc2626, #ea580c)'
+    },
     coming: {
       title: 'Coming Soon',
       img: '',
