@@ -329,6 +329,7 @@ ul { list-style: none; }
   line-height: 1.8;
   margin-bottom: var(--space-sm);
   font-size: 1.05rem;
+  text-align: justify;
 }
 
 /* About feature image */
