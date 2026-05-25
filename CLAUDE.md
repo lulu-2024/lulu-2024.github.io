@@ -19,17 +19,75 @@ Deployed on GitHub Pages. Pure HTML/CSS/JS, zero dependencies.
 
 ## Work Instructions
 
-1. **Read docs/ first** — always check `docs/execution-steps.md` for current phase and next step
-2. **One phase at a time** — complete all steps in a phase before moving to the next
-3. **Update execution-steps.md** — mark `[x]` on each completed step
-4. **Write devlog** — at end of each session, append to today's `devlog/YYYY-MM-DD.md`
-5. **Test after each phase** — open `index.html` in browser, verify all steps work
-6. **No frameworks** — vanilla HTML/CSS/JS only
-7. **Placeholder content** — use `Your Name`, `your.email@example.com` until Phase 5
-8. **Ask before Phase 5** — confirm real content with user before replacing placeholders
+1. **No frameworks** — vanilla HTML/CSS/JS only
+2. **Test after changes** — open `index.html` in browser, verify
+3. **Commit and push** — after each session, push to deploy
+
+## Deployed Site
+
+- **Live URL:** https://lulu-2024.github.io/
+- **Repo:** https://github.com/lulu-2024/lulu-2024.github.io
+- **Push = deploy:** any `git push` automatically updates the live site in 1-2 minutes
+
+## How to Add a New Project
+
+### Step 1 — Add card in `index.html`
+
+In the Projects section, find the right category tag and add a card:
+
+```html
+<div class="project-card" data-project="keyname" data-category="分类">
+  <div class="project-card-img" style="background: linear-gradient(135deg, #颜色1, #颜色2);">
+    <img src="" alt="" style="display:none;height:64px;object-fit:contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span>卡片上显示的名称</span>
+  </div>
+  <div class="project-card-body">
+    <h3>项目标题</h3>
+    <p>一句话简介</p>
+    <span class="project-card-link">View Project &rarr;</span>
+  </div>
+</div>
+```
+
+### Step 2 — Add data in `js/main.js`
+
+Find `var projects = {` and add an entry:
+
+```js
+keyname: {
+  title: '弹窗标题',
+  img: '',                              // 留空用渐变色，填图片路径则显示图片
+  desc: '弹窗里的详细描述文字',
+  tags: ['标签1', '标签2', '标签3'],
+  link: 'https://github.com/lulu-2024/仓库名',
+  gradient: 'linear-gradient(135deg, #颜色1, #颜色2)'
+},
+```
+
+Optional fields:
+- `pdf: 'assets/file.pdf'` — clicking card opens PDF in new tab instead of modal
+- `html: 'pages/page.html'` — clicking card opens a custom HTML page
+
+### Step 3 — Classify
+
+| `data-category` | 对应分类 |
+|------|------|
+| `analytics` | Data Analytics & Visualization |
+| `financial` | Financial & Risk Analytics |
+| `engineering` | Data Engineering & Systems |
+| `ai` | AI-Assisted Data Projects |
+| `other` | Others |
+
+### Step 4 — Deploy
+
+```bash
+git add -A
+git commit -m "新增 XX 项目"
+git push
+```
 
 ## Current Phase
-Phase 5 — Content Integration & Polish (waiting for user's real content)
+Live — ongoing content updates
 
 ## Reference
 - Friend's portfolio: https://arsalan-ahmed17.github.io/my-portfolio/
