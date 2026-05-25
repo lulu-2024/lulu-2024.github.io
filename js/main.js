@@ -262,6 +262,14 @@ function initProjectModal() {
       link: '#',
       gradient: 'linear-gradient(135deg, #065f46, #059669)'
     },
+    toys: {
+      title: 'Maven Toys Sales Analysis',
+      img: '',
+      desc: 'An exploratory data analysis of a chain toy store\'s sales performance, inventory management, and profitability across multiple retail locations. Using SQL and data visualization techniques, this project uncovers seasonal trends, top-performing product categories, and store-level revenue drivers. Key findings include holiday season sales spikes, inventory optimization opportunities, and regional performance comparisons.',
+      tags: ['SQL', 'Data Analysis', 'Excel', 'Reporting'],
+      link: 'https://github.com/lulu-2024/Maven-Toys-Sales-Analysis',
+      gradient: 'linear-gradient(135deg, #059669, #06b6d4)'
+    },
     covid: {
       title: 'Global COVID-19 Analytics Dashboard',
       img: '',
