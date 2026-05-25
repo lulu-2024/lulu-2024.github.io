@@ -265,8 +265,8 @@ function initProjectModal() {
     toys: {
       title: 'Maven Toys Sales Analysis',
       img: '',
-      desc: 'An exploratory data analysis of a chain toy store\'s sales performance, inventory management, and profitability across multiple retail locations. Using SQL and data visualization techniques, this project uncovers seasonal trends, top-performing product categories, and store-level revenue drivers. Key findings include holiday season sales spikes, inventory optimization opportunities, and regional performance comparisons.',
-      tags: ['SQL', 'Data Analysis', 'Excel', 'Reporting'],
+      desc: 'A Power BI dashboard analyzing sales performance for Maven Toys, a fictional chain of toy stores. The dashboard visualizes revenue trends, profit margins, product category breakdowns, and store-level performance across multiple locations. Interactive filters allow users to drill into seasonal patterns, compare regional profitability, and identify top-selling products. Built to demonstrate data storytelling and dashboard design skills using Power BI.',
+      tags: ['Power BI', 'Data Visualization', 'Dashboard', 'Sales Analytics'],
       link: 'https://github.com/lulu-2024/Maven-Toys-Sales-Analysis',
       gradient: 'linear-gradient(135deg, #059669, #06b6d4)'
     },
