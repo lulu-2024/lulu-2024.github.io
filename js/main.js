@@ -21,7 +21,6 @@ function initTypewriter() {
   if (!el) return;
 
   const roles = [
-    'Data Scientist.',
     'AI Enthusiast.',
     'Problem Solver.',
     'Lifelong Learner.'
