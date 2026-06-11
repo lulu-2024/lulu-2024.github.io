@@ -417,10 +417,10 @@ ul { list-style: none; }
 
 .filter-btn {
   padding: 0.45rem 1rem;
-  border: 1px solid #ddd6fe;
+  border: 1px solid var(--border);
   border-radius: 20px;
-  background: #f5f3ff;
-  color: #7c3aed;
+  background: var(--bg-card);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
@@ -429,15 +429,14 @@ ul { list-style: none; }
 }
 
 .filter-btn:hover {
-  background: #ede9fe;
-  border-color: #a78bfa;
-  color: #6d28d9;
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .filter-btn.active {
-  background: #7c3aed;
+  background: var(--text-primary);
   color: #fff;
-  border-color: #7c3aed;
+  border-color: var(--text-primary);
 }
 
 .projects-grid {
@@ -499,12 +498,12 @@ ul { list-style: none; }
 .project-card-link {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #a78bfa;
+  color: var(--text-muted);
   transition: color 0.2s ease;
 }
 
 .project-card:hover .project-card-link {
-  color: #7c3aed;
+  color: var(--accent);
 }
 
 .project-card--placeholder {
@@ -618,8 +617,8 @@ ul { list-style: none; }
   font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 20px;
-  background: #f5f3ff;
-  color: #7c3aed;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
