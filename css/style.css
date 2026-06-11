@@ -417,10 +417,10 @@ ul { list-style: none; }
 
 .filter-btn {
   padding: 0.45rem 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid #ddd6fe;
   border-radius: 20px;
-  background: var(--bg-card);
-  color: var(--text-secondary);
+  background: #f5f3ff;
+  color: #7c3aed;
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
@@ -429,14 +429,15 @@ ul { list-style: none; }
 }
 
 .filter-btn:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
+  background: #ede9fe;
+  border-color: #a78bfa;
+  color: #6d28d9;
 }
 
 .filter-btn.active {
-  background: var(--text-primary);
+  background: #7c3aed;
   color: #fff;
-  border-color: var(--text-primary);
+  border-color: #7c3aed;
 }
 
 .projects-grid {
