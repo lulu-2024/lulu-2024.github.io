@@ -499,12 +499,12 @@ ul { list-style: none; }
 .project-card-link {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: #a78bfa;
   transition: color 0.2s ease;
 }
 
 .project-card:hover .project-card-link {
-  color: var(--accent);
+  color: #7c3aed;
 }
 
 .project-card--placeholder {
@@ -618,8 +618,8 @@ ul { list-style: none; }
   font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 20px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+  background: #f5f3ff;
+  color: #7c3aed;
   font-weight: 500;
 }
 
