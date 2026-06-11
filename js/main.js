@@ -261,6 +261,14 @@ function initProjectModal() {
       link: '#',
       gradient: 'linear-gradient(135deg, #065f46, #059669)'
     },
+    germancredit: {
+      title: 'German Credit Analysis',
+      img: '',
+      desc: 'An end-to-end machine learning pipeline on the German Credit Dataset (1,000 loan applicants). The project covers exploratory data analysis, data cleaning, and preprocessing including one-hot encoding and log transformations. KMeans clustering with the elbow method groups customers into segments, PCA visualizes these clusters in 2D, and an XGBoost classifier with Stratified K-Fold CV and GridSearchCV predicts credit risk. The workflow demonstrates both unsupervised and supervised learning applied to a real-world credit scoring problem.',
+      tags: ['Python', 'XGBoost', 'KMeans', 'PCA', 'Credit Risk', 'Scikit-learn'],
+      link: 'https://github.com/lulu-2024/German-Credit-Analysis',
+      gradient: 'linear-gradient(135deg, #1e40af, #0891b2)'
+    },
     toys: {
       title: 'Maven Toys Sales Analysis',
       img: '',
