@@ -243,7 +243,7 @@ function initProjectModal() {
       desc: 'As part of CS50\'s web track, I was tasked with building this mock trading platform. The user has to initially create an account, after which their account will be credited with 10,000 (imaginary) dollars. Using this amount, the user can purchase a particular stock listed on the New York Stock Exchange (NYSE), by entering the stock\'s symbol on the \'buy\' page. The trade is executed at real-time prices which are updated by querying IEX\'s API. The user can view their portfolio and even sell a particular stock from their holdings, at the current rate.',
       tags: ['Python', 'Flask', 'SQLite', 'HTML/CSS'],
       link: 'https://github.com/lulu-2024/CS50-Finance',
-      gradient: 'linear-gradient(135deg, #1e3a5f, #2563eb)'
+      gradient: 'linear-gradient(135deg, #4338ca, #6366f1)'
     },
     dsjourney: {
       title: 'My Data Science Journey',
@@ -251,7 +251,7 @@ function initProjectModal() {
       desc: 'A curated collection of Jupyter notebooks documenting my learning path through data science. Covers data wrangling with Pandas, exploratory data analysis, statistical testing, data visualization with Matplotlib and Seaborn, and introductory machine learning with Scikit-learn. Each notebook is self-contained with explanations, code, and visual outputs — serving as both a personal reference and a portfolio of techniques.',
       tags: ['Python', 'Jupyter', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn'],
       link: 'https://github.com/lulu-2024/My-Data-Science-Journey',
-      gradient: 'linear-gradient(135deg, #4c1d95, #7c3aed)'
+      gradient: 'linear-gradient(135deg, #6366f1, #a78bfa)'
     },
     powerbi: {
       title: 'Power BI Dashboard',
@@ -259,7 +259,7 @@ function initProjectModal() {
       desc: 'An interactive Power BI dashboard for real-time data exploration and KPI tracking. Features dynamic filtering, drill-down capabilities, and automated data refresh. Designed to transform raw data into actionable business insights through compelling visualizations. Replace with your own published Power BI embed link to make this dashboard live.',
       tags: ['Power BI', 'DAX', 'Data Visualization', 'SQL'],
       link: '#',
-      gradient: 'linear-gradient(135deg, #065f46, #059669)'
+      gradient: 'linear-gradient(135deg, #7c3aed, #c4b5fd)'
     },
     germancredit: {
       title: 'German Credit Analysis',
@@ -267,7 +267,7 @@ function initProjectModal() {
       desc: 'An end-to-end machine learning pipeline on the German Credit Dataset (1,000 loan applicants). The project covers exploratory data analysis, data cleaning, and preprocessing including one-hot encoding and log transformations. KMeans clustering with the elbow method groups customers into segments, PCA visualizes these clusters in 2D, and an XGBoost classifier with Stratified K-Fold CV and GridSearchCV predicts credit risk. The workflow demonstrates both unsupervised and supervised learning applied to a real-world credit scoring problem.',
       tags: ['Python', 'XGBoost', 'KMeans', 'PCA', 'Credit Risk', 'Scikit-learn'],
       link: 'https://github.com/lulu-2024/German-Credit-Analysis',
-      gradient: 'linear-gradient(135deg, #1e40af, #0891b2)'
+      gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
     },
     toys: {
       title: 'Maven Toys Sales Analysis',
@@ -275,7 +275,7 @@ function initProjectModal() {
       desc: 'A Power BI dashboard analyzing sales performance for Maven Toys, a fictional chain of toy stores. The dashboard visualizes revenue trends, profit margins, product category breakdowns, and store-level performance across multiple locations. Interactive filters allow users to drill into seasonal patterns, compare regional profitability, and identify top-selling products. Built to demonstrate data storytelling and dashboard design skills using Power BI.',
       tags: ['Power BI', 'Data Visualization', 'Dashboard', 'Sales Analytics'],
       link: 'https://github.com/lulu-2024/Maven-Toys-Sales-Analysis',
-      gradient: 'linear-gradient(135deg, #059669, #06b6d4)'
+      gradient: 'linear-gradient(135deg, #4f46e5, #7c3aed)'
     },
     covid: {
       title: 'Global COVID-19 Analytics Dashboard',
@@ -283,7 +283,7 @@ function initProjectModal() {
       desc: 'A comprehensive SQL-based analysis of global COVID-19 data, exploring infection rates, mortality trends, and vaccination progress across countries and continents. The project uses advanced SQL queries including joins, CTEs, window functions, and aggregate operations to extract meaningful insights from large-scale pandemic datasets. Key findings include country-level case fatality rates, vaccination rollout analysis, and time-series trend visualization.',
       tags: ['SQL', 'Data Analysis', 'Tableau', 'COVID-19'],
       link: 'https://github.com/lulu-2024/COVID-Project',
-      gradient: 'linear-gradient(135deg, #dc2626, #ea580c)'
+      gradient: 'linear-gradient(135deg, #7c3aed, #c4b5fd)'
     },
     coming: {
       title: 'Coming Soon',
